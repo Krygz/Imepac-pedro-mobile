@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/registerRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/taskflow_background"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/registerTituloText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastro_titulo"
+        android:textColor="@color/taskflow_text"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp" />
+
+    <EditText
+        android:id="@+id/registerNomeInput"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:background="@android:drawable/edit_text"
+        android:hint="@string/nome"
+        android:inputType="textPersonName"
+        android:textColor="@color/taskflow_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/registerTituloText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/registerEmailInput"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/edit_text"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/taskflow_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/registerNomeInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/registerSenhaInput"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/edit_text"
+        android:hint="@string/senha"
+        android:inputType="textPassword"
+        android:textColor="@color/taskflow_text"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/registerEmailInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/registerConfirmarButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/taskflow_primary"
+        android:text="@string/cadastrar"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/registerSenhaInput"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/registerVoltarButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/taskflow_primary"
+        android:text="@string/ir_para_login"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/registerConfirmarButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/registerProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/registerVoltarButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

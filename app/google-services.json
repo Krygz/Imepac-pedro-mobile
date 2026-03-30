@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1004874708753",
+    "project_id": "imepac-pedro",
+    "storage_bucket": "imepac-pedro.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004874708753:android:4ce193f1cc6b35b3123eb0",
+        "android_client_info": {
+          "package_name": "com.taskflow"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMFF5VrZI4cqyXhuM3JZwwPuBkT8SRoSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

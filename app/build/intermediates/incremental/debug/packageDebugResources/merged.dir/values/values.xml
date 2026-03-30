@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="taskflow_background">#F4F6F8</color>
+    <color name="taskflow_on_primary">#FFFFFF</color>
+    <color name="taskflow_primary">#1565C0</color>
+    <color name="taskflow_text">#1A1A1A</color>
+    <string name="app_name">TaskFlow</string>
+    <string name="boas_vindas">Bem-vindo(a), %1$s</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastro_titulo">Cadastro</string>
+    <string name="email">Email</string>
+    <string name="entrar">Entrar</string>
+    <string name="gcm_defaultSenderId" translatable="false">1004874708753</string>
+    <string name="google_api_key" translatable="false">AIzaSyDMFF5VrZI4cqyXhuM3JZwwPuBkT8SRoSs</string>
+    <string name="google_app_id" translatable="false">1:1004874708753:android:4ce193f1cc6b35b3123eb0</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDMFF5VrZI4cqyXhuM3JZwwPuBkT8SRoSs</string>
+    <string name="google_storage_bucket" translatable="false">imepac-pedro.firebasestorage.app</string>
+    <string name="home_titulo">Home</string>
+    <string name="ir_para_cadastro">Criar conta</string>
+    <string name="ir_para_login">Voltar para login</string>
+    <string name="login_titulo">Login</string>
+    <string name="nome">Nome</string>
+    <string name="project_id" translatable="false">imepac-pedro</string>
+    <string name="sair">Sair</string>
+    <string name="senha">Senha</string>
+    <style name="Theme.TaskFlow" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/taskflow_primary</item>
+        <item name="colorOnPrimary">@color/taskflow_on_primary</item>
+        <item name="android:statusBarColor">@color/taskflow_primary</item>
+    </style>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.TaskFlow" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/taskflow_primary</item>
+        <item name="colorOnPrimary">@color/taskflow_on_primary</item>
+        <item name="android:statusBarColor">@color/taskflow_primary</item>
+    </style>
+</resources>
+
