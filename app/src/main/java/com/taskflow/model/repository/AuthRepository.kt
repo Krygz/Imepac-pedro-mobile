@@ -2,10 +2,12 @@ package com.taskflow.model.repository
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.firestore.FirebaseFirestore
 import com.taskflow.model.data.AuthUser
 
 class AuthRepository(
-    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance(),
+    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
 ) {
 
     interface AuthCallback {
@@ -28,7 +30,26 @@ class AuthRepository(
                     displayName = nome
                 }
                 result.user?.updateProfile(request)
-                    ?.addOnSuccessListener { callback.onSuccess() }
+                    ?.addOnSuccessListener {
+                        val usuario = result.user
+                        if (usuario == null) {
+                            callback.onError("Usuário criado, mas não foi possível obter dados do usuário.")
+                            return@addOnSuccessListener
+                        }
+
+                        val dadosUsuario = hashMapOf(
+                            "nome" to nome,
+                            "email" to (usuario.email ?: email),
+                            "uid" to usuario.uid
+                        )
+
+                        firestore.collection("Usuarios")
+                            .add(dadosUsuario)
+                            .addOnSuccessListener { callback.onSuccess() }
+                            .addOnFailureListener { e ->
+                                callback.onError(e.message ?: "Usuário criado, mas falhou ao salvar no Firestore.")
+                            }
+                    }
                     ?.addOnFailureListener { e ->
                         callback.onError(e.message ?: "Usuário criado, mas falhou ao salvar nome.")
                     }
