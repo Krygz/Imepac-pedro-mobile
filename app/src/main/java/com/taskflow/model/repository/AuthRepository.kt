@@ -37,14 +37,16 @@ class AuthRepository(
                             return@addOnSuccessListener
                         }
 
-                        val dadosUsuario = hashMapOf(
+                        val uid = usuario.uid
+                        val dadosUsuario = hashMapOf<String, Any>(
                             "nome" to nome,
                             "email" to (usuario.email ?: email),
-                            "uid" to usuario.uid
+                            "createdAt" to com.google.firebase.firestore.FieldValue.serverTimestamp(),
                         )
 
-                        firestore.collection("Usuarios")
-                            .add(dadosUsuario)
+                        firestore.collection("users")
+                            .document(uid)
+                            .set(dadosUsuario, com.google.firebase.firestore.SetOptions.merge())
                             .addOnSuccessListener { callback.onSuccess() }
                             .addOnFailureListener { e ->
                                 callback.onError(e.message ?: "Usuário criado, mas falhou ao salvar no Firestore.")

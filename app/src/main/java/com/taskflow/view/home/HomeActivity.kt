@@ -2,39 +2,36 @@ package com.taskflow.view.home
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.taskflow.R
-import com.taskflow.databinding.ActivityHomeBinding
+import com.taskflow.goals.ui.GoalsApp
 import com.taskflow.view.login.LoginActivity
 import com.taskflow.viewmodel.HomeViewModel
 
+/**
+ * Pós-login: hospeda o MVP de metas em Jetpack Compose sem alterar o fluxo de autenticação.
+ * O logout reutiliza [HomeViewModel] + [LoginActivity] como antes.
+ */
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityHomeBinding
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var homeShellViewModel: HomeViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        homeShellViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
+        homeShellViewModel.carregarUsuarioLogado()
 
-        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
-
-        binding.homeSairButton.setOnClickListener {
-            viewModel.sair()
-            val intent = Intent(this, LoginActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
+        setContent {
+            GoalsApp(
+                onLogout = {
+                    homeShellViewModel.sair()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                },
+            )
         }
-
-        viewModel.usuario.observe(this) { user ->
-            val nome = user?.nome?.takeIf { it.isNotBlank() } ?: user?.email ?: "Usuário"
-            binding.homeBoasVindasText.text = getString(R.string.boas_vindas, nome)
-        }
-
-        viewModel.carregarUsuarioLogado()
     }
 }
-

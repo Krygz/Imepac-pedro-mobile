@@ -47,3 +47,4 @@ string project_id
 string sair
 string senha
 style Theme.TaskFlow
+xml file_paths

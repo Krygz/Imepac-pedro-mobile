@@ -1,14 +1,18 @@
 [
     {
-        "merged": "com.taskflow.app-debug-43:/layout_activity_home.xml.flat",
-        "source": "com.taskflow.app-main-45:/layout/activity_home.xml"
+        "merged": "com.taskflow.app-debug-76:/layout_activity_login.xml.flat",
+        "source": "com.taskflow.app-main-78:/layout/activity_login.xml"
     },
     {
-        "merged": "com.taskflow.app-debug-43:/layout_activity_register.xml.flat",
-        "source": "com.taskflow.app-main-45:/layout/activity_register.xml"
+        "merged": "com.taskflow.app-debug-76:/layout_activity_register.xml.flat",
+        "source": "com.taskflow.app-main-78:/layout/activity_register.xml"
     },
     {
-        "merged": "com.taskflow.app-debug-43:/layout_activity_login.xml.flat",
-        "source": "com.taskflow.app-main-45:/layout/activity_login.xml"
+        "merged": "com.taskflow.app-debug-76:/layout_activity_home.xml.flat",
+        "source": "com.taskflow.app-main-78:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.taskflow.app-debug-76:/xml_file_paths.xml.flat",
+        "source": "com.taskflow.app-main-78:/xml/file_paths.xml"
     }
 ]

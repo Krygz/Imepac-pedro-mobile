@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.taskflow.app-mergeDebugResources-41:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.taskflow.app-mergeDebugResources-74:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ph429\\.gradle\\caches\\transforms-4\\5ae344d9580719a625d30a4a12c6b2aa\\transformed\\appcompat-1.7.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
